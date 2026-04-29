@@ -1,6 +1,5 @@
 module "dev_compute_1" {
-  source      = "app.terraform.io/subbu-workspace10/compute/modules"
-  version = "1.0.0"
+  source = "../modules/compute" 
   environment = module.dev_vpc_1.environment
   amis = {
     us-east-1 = "ami-04505e74c0741db8d" # ubuntu 20.04 LTS
@@ -8,7 +7,7 @@ module "dev_compute_1" {
   }
   aws_region           = var.aws_region
   instance_type        = "t2.nano"
-  key_name             = "SecOps-Key"
+  key_name             = "SecOps-key"
   iam_instance_profile = module.dev_iam_1.instprofile
   public_subnets       = module.dev_vpc_1.public_subnets_id
   private_subnets      = module.dev_vpc_1.private_subnets_id
