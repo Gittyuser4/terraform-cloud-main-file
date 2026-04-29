@@ -1,6 +1,6 @@
 module "dev_compute_1" {
   source      = "app.terraform.io/subbu-workspace10/compute/modules"
-  version = "1.0.1"
+  version = "1.0.0"
   environment = module.dev_vpc_1.environment
   amis = {
     us-east-1 = "ami-04505e74c0741db8d" # ubuntu 20.04 LTS
